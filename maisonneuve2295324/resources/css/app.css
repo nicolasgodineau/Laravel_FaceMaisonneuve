@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #3f206c transparent;
+}
+
+.flex_col_itemCenter_justifyCenter {
+    @apply flex flex-col items-center justify-center;
+}
+
+.call_to_action {
+    @apply rounded-3xl bg-Violetfoncer text-sm font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-2 hover:text-Violetfoncer hover:border-Violetfoncer;
+}
+.call_to_action_red {
+    @apply rounded-3xl bg-Rougefoncer text-sm font-semibold text-white border-2 border-transparent hover:bg-transparent hover:border-2 hover:text-Rougefoncer hover:border-Rougefoncer;
+}
+
+.titre_H1 {
+    @apply text-2xl font-bold text-Violetfoncer text-center tracking-widest;
+}
+
+.container h1 {
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent),
+        linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
+}
+
+.link-underline-black {
+    background-image: linear-gradient(transparent, transparent),
+        linear-gradient(#3f206c, #3f206c);
+}
+
+.link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%;
+}
