@@ -30,4 +30,4 @@ Route::put('etudiant-edit/{etudiant}', [EtudiantController::class , 'update'])->
 
 Route::delete('etudiant-edit/{etudiant}', [EtudiantController::class,'destroy'])->name('etudiant.delete');
 
-
+Route::get('etudiant.filtre', [EtudiantController::class , 'filtre'])->name('etudiant.filtre');

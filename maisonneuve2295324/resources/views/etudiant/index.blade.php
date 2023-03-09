@@ -8,7 +8,22 @@
     </div>
     <div class="flex_col_itemCenter_justifyCenter gap-4 overflow-auto">
         <h1 class="titre_H1 p-4">Liste des étudiants</h1>
-
+        <form action="{{ route('etudiant.filtre') }}" method="get"
+            class="flex items-center justify-center gap-4 rounded-3xl bg-[rgba(255,255,255,0.2)] p-2 text-xs w-full text-Violetfoncer cursor-pointer">
+            @csrf
+            <select class="bg-transparent" name="filtre" id="filtre">
+                <option value="defaut"selected>Filtres</option>
+                <option value="nom">Nom</option>
+                <option value="prenom">Prénom</option>
+                <option value="id">id</option>
+            </select>
+            <select class="bg-transparent cursor-pointer" name="tri" id="tri">
+                <option value="defaut"selected>Ordre</option>
+                <option value="asc">asc</option>
+                <option value="desc">desc</option>
+            </select>
+            <input class="text-base font-bold text_decoration_line" type="submit" value="Valider">
+        </form>
         <div class="w-full grid grid-cols-fluid gap-6 overflow-auto p-1">
             @foreach ($etudiants as $etudiant)
                 <a class="text-Violetfoncer hover:text-Violetfoncer " href="{{ route('etudiant.show', $etudiant->id) }}">
