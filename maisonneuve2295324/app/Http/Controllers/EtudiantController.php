@@ -14,8 +14,9 @@ class EtudiantController extends Controller
 {
     public function index()
     {
-        $etudiants = Etudiant::all(); //récupérer tous les articles de blog de DB
-        return view('etudiant.index', ['etudiants' => $etudiants]); //renvoie les messages récupérés
+        $etudiants = Etudiant::all(); 
+        
+        return view('etudiant.index', ['etudiants' => $etudiants]); 
     }
 
     public function create()
@@ -79,23 +80,4 @@ class EtudiantController extends Controller
         return redirect(route('etudiant.index'));
 
     }
-    
-    public function sortDESC(Etudiant $etudiant)
-    {
-        $etudiants = Etudiant::orderBy('id','DESC')
-                    ->get();
-
-        return view('etudiant.index', ['etudiants' => $etudiants]); //renvoie les messages récupérés
-
-    }
-    public function sortASC(Etudiant $etudiant)
-    {
-        $etudiants = Etudiant::orderBy('id','ASC')
-                    ->get();
-
-        return view('etudiant.index', ['etudiants' => $etudiants]); //renvoie les messages récupérés
-
-    }
-
-
 }

@@ -17,11 +17,11 @@
 <body>
 
     <main
-        class="min-h-screen flex items-center justify-center font-body bg-gradient-to-tr from-indigo-700 via-violet-300 to-blue-200 ">
+        class="min-h-screen  flex items-center justify-center font-body bg-gradient-to-tr from-indigo-700 via-violet-300 to-blue-200 ">
 
         <section
-            class="h-[80vh] w-[60%] flex flex-col gap-2 rounded-3xl bg-gradient-to-br from-[rgba(255,255,255,0.7)] to-[rgba(255,255,255,0.3)] p-4 z-10 shadow-2xl">
-            <div class="w-full">
+            class="h-[80vh] w-[60%] max-w-7xl flex flex-col gap-2 rounded-3xl bg-gradient-to-br from-[rgba(255,255,255,0.7)] to-[rgba(255,255,255,0.3)] p-4 z-10 shadow-2xl">
+            <div class="w-full flex flex-col items-center justify-center gap-10">
                 <nav class="flex gap-4 w-full items-start rounded-3xl bg-[rgba(255,255,255,0.68)] p-2">
                     <h1 class="flex-grow text-Violetfoncer font-black uppercase font-body p-1"><a
                             href="/">FaceMaisonneuve</a>

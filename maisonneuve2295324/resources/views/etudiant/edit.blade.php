@@ -33,10 +33,14 @@
                     class="bg-[rgba(255,255,255,0.68)] w-full rounded-3xl border-gray-200 p-2 pr-12 text-sm shadow-sm">
                     @foreach ($villes as $ville)
                         <option value="{{ $ville->id }}">{{ $ville->nom }} </option>
-                        @if ($ville->id == $etudiant->ville_id)
+                        <option value="{{ $ville->id }}" {{ $ville->id == $etudiant->ville_id ? 'selected' : '' }}>
+                            {{ $ville->nom }}
+                        </option>
+                        {{-- Version avec IF classique --}}
+                        {{-- @if ($ville->id == $etudiant->ville_id)
                             <option value="{{ $ville->id }}" selected>
                                 {{ $ville->nom }} </option>
-                        @endif
+                        @endif --}}
                     @endforeach
                 </select>
                 <div>
