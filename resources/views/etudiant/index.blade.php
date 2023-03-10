@@ -15,14 +15,15 @@
                 <option value="defaut"selected>Filtres</option>
                 <option value="nom">Nom</option>
                 <option value="prenom">Prénom</option>
-                <option value="id">id</option>
+                <option value="id">ID</option>
             </select>
-            <select class="bg-transparent cursor-pointer" name="tri" id="tri">
+            <select class="bg-transparent cursor-pointer " name="tri" id="tri">
                 <option value="defaut"selected>Ordre</option>
                 <option value="asc">asc</option>
                 <option value="desc">desc</option>
             </select>
-            <input class="text-base font-bold text_decoration_line" type="submit" value="Valider">
+            <input class="text-base text_decoration_line cursor-pointer p-1 link link-underline link-underline-black"
+                type="submit" value="Valider">
         </form>
         <div class="w-full grid grid-cols-fluid gap-6 overflow-auto p-1">
             @foreach ($etudiants as $etudiant)

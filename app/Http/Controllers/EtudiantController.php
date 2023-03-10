@@ -89,6 +89,9 @@ class EtudiantController extends Controller
         if ($filtres["filtre"] == "defaut") {
             $filtres["filtre"] = 'id';
         }
+        if ($filtres["tri"] == "defaut") {
+            $filtres["tri"] = 'ASC';
+        }
 
         $etudiants = Etudiant::orderBy($filtres["filtre"],$filtres["tri"])
         ->get();
