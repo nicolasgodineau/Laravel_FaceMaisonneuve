@@ -1,10 +1,6 @@
 @extends ('layout.app')
 @section('title', 'Création')
 @section('content')
-    <a class="text-Violetfoncer p-1 link link-underline link-underline-black" href="{{ route('etudiant.index') }}">Liste des
-        étudiants</a>
-    </nav>
-    </div>
     <h1 class="titre_H1 p-4">Ajouter un étudiant</h1>
     <article class="h-full w-full flex items-center justify-center gap-6 ">
         <div

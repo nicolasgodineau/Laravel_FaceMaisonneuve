@@ -26,6 +26,10 @@ J'ai eu une érreure Error Class "Ville" not found ,j'ai du changer de place "fa
 puis j'ai recommencer avec
 php artisan tinker, puis Ville::factory()->times(15)->create();
 
+### création de données user
+
+php artisan tinker, puis User::factory()->times(100)->create();
+
 ### création de données etudiants
 
 php artisan make:factory EtudiantFactory -m Etudiant
@@ -36,3 +40,32 @@ php artisan tinker, puis Etudiant::factory()->times(100)->create();
 
 php artisan make:controller EtudiantController
 php artisan make:controller VilleController
+
+### Modification de la table étudiant et user
+
+Apres les modifications, creation des fakes informations
+User::factory()->times(100)->create();
+
+# TP2
+
+### création en lien avec les articles
+
+php artisan make:model Article
+php artisan make:migration create_Articles_table
+php artisan migrate
+php artisan make:controller ArticleController -m article
+php artisan make:factory ArticleFactory -m Articles
+
+### Création en lien avec le téléchargement du document
+
+php artisan make:model Document
+php artisan make:migration create_documents_table
+J'ai renseigner les informations pour la table dans la base de donnée puis,
+php artisan migrate
+
+### Création en lien avec la langue
+
+php artisan make:model Langue
+php artisan make:migration create_langues_table
+J'ai renseigner les informations pour la table dans la base de donnée puis,
+php artisan migrate

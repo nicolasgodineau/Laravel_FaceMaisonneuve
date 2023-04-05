@@ -11,10 +11,22 @@ class Etudiant extends Model
 
     protected $table = 'etudiants';
 
+    protected $primaryKey = 'user_id';
+
     protected $hidden = [
         'created_at', 'updated_at',
         ];
 
-    protected $fillable = ['ville_id', 'nom', 'prenom','adresse','telephone','email','dateNaissance'];
+    protected $fillable = ['user_id','ville_id', 'nom', 'prenom','adresse','telephone','dateNaissance'];
 
+
+    public function getUser()
+    {
+        return $this->belongsTo(User::class, 'users_id');
+    }
+
+    public function getVille()
+    {
+    return $this->belongsTo(Ville::class, 'ville_id');
+    }
 }

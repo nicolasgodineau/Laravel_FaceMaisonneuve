@@ -45,3 +45,38 @@
     background-size: 100% 1.5px;
     background-position: 0 85%;
 }
+
+.pagination.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.pagination.menu a {
+    color: #3f206c;
+    padding: 0.5rem 0.75rem;
+    line-height: 1.25;
+}
+
+.pagination.menu a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+i.chevron.left {
+    background-image: url("/public/images/left.svg");
+    background-size: contain;
+    display: block;
+    height: 30px;
+    width: 30px;
+    fill: #3f206c;
+}
+i.chevron.right {
+    background-image: url("/public/images/right.svg");
+    background-size: contain;
+    display: block;
+    height: 30px;
+    width: 30px;
+}

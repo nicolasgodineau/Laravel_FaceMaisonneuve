@@ -1,9 +1,9 @@
 @extends ('layout.app')
 @section('title', 'Edition')
 @section('content')
-    <a class="text-Violetfoncer p-1 link link-underline link-underline-black" href="{{ route('etudiant.index') }}">Liste des
+    <a class="text-Violetfoncer p-1  link-underline link-underline-black" href="{{ route('etudiant.index') }}">Liste des
         étudiants</a>
-    <a class="text-Violetfoncer p-1 link link-underline link-underline-black" href="{{ route('etudiant.create') }}">Ajouter un
+    <a class="text-Violetfoncer p-1  link-underline link-underline-black" href="{{ route('etudiant.create') }}">Ajouter un
         étudiant</a>
     </nav>
     </div>

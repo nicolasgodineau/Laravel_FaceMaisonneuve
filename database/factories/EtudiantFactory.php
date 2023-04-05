@@ -18,11 +18,12 @@ class EtudiantFactory extends Factory
     public function definition(): array
     {
         return [
+            'user_id'=> fake()->unique()->numberBetween($min = 1, $max = 100),
             'nom'=> fake()->lastName(),
             'prenom'=> fake()->firstName(),
             'adresse'=> fake()->streetAddress(),
             'telephone'=> fake()->phoneNumber(),
-            'email'=> fake()->safeEmail(),
+            //'email'=> fake()->safeEmail(),
             'dateNaissance'=> fake()->date($format = 'Y-m-d', $max = '-20 years'),
             'ville_id'=> fake()->numberBetween($min = 1, $max = 15),
         ];

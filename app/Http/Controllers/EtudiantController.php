@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Etudiant;
 use App\Models\Ville;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 use DB;
 
@@ -16,6 +18,7 @@ class EtudiantController extends Controller
     {
         $etudiants = Etudiant::all(); 
 
+        $etudiants = Etudiant::Paginate(20);
         return view('etudiant.index', ['etudiants' => $etudiants]); 
     }
 
@@ -27,7 +30,6 @@ class EtudiantController extends Controller
 
     public function store(Request $request)
     {
-
         $etudiant = Etudiant::create([
                 'nom'=>$request->nom,
                 'prenom'=>$request->prenom,
@@ -42,14 +44,37 @@ class EtudiantController extends Controller
         }
 
 
-    
-        public function show(Etudiant $etudiant)
+    public function show(Etudiant $etudiant)
     {
+        $etudiant = Etudiant::findOrFail($etudiant->user_id);
+        $user = User::findOrFail($etudiant->user_id);
+        $ville = Ville::findOrFail($etudiant->ville_id);
+
+        // Rajoute l'email dans le tableau de information de l'étudiant
+        // l'email est lier à la table Users et non Etudiants
+        $etudiant['email'] = $user['email'];
+        $etudiant['ville'] = $ville['nom'];
+
+
+        // Trouve la ville de l'étudiant
+
+        return view('etudiant.show', ['etudiant' => $etudiant]);
+    }
+/*         public function show($etudiantId)
+    {
+
+
+
+        $etudiant = Etudiant::find($etudiantId);
+        echo '<pre>';
+        print_r($etudiant);
+        echo '</pre>';
+        die();
         // Trouve la ville de l'étudiant
         $ville = Ville::find($etudiant['ville_id']);
 
         return view('etudiant.show', ['etudiant' => $etudiant, 'ville' => $ville]);
-    }
+    } */
 
     public function edit(Etudiant $etudiant)
     {
