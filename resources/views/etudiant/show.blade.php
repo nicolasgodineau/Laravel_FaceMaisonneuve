@@ -5,14 +5,20 @@
     <h1 class="titre_H1 p-4">@lang('lang.student_profile')</h1>
     <article class="h-full w-full flex items-center justify-center gap-6 ">
         <div
-            class="px-10 py-8 flex flex-col items-center justify-center gap-1 bg-[rgba(255,255,255,0.68)] shadow-xl rounded-3xl">
-            <div class="photo-wrapper p-2">
-                <img class="w-32 h-32 border-2 border-Violetfoncer rounded-full mx-auto"
+            class="relative h-96 w-96 px-10 py-8 flex flex-col items-center justify-center gap-1 bg-[rgba(255,255,255,0.68)] shadow-xl rounded-3xl">
+            <div
+                class="absolute top-[-107px] left-[50%] -translate-x-1/2 w-32 rounded-full bg-[#F5F4FE] shadow-lg shadow-neutral-300">
+                <img class="border-2 border-Violetfoncer rounded-full mx-auto"
                     src="{{ asset('images/profil/profil_') }}{{ ucfirst($etudiant->user_id) }}.svg"
                     alt="Etudiant {{ ucfirst($etudiant->nom) }} {{ ucfirst($etudiant->prenom) }}">
             </div>
+            {{--             <div class="photo-wrapper p-2">
+                <img class="w-32 h-32 border-2 border-Violetfoncer rounded-full mx-auto"
+                    src="{{ asset('images/profil/profil_') }}{{ ucfirst($etudiant->user_id) }}.svg"
+                    alt="Etudiant {{ ucfirst($etudiant->nom) }} {{ ucfirst($etudiant->prenom) }}">
+            </div> --}}
             <div class="w-full">
-                <h3 class="text-center text-xl text-black font-medium leading-8">
+                <h3 class="text-center text-xl text-Violetfoncer font-medium leading-8">
                     {{ ucfirst($etudiant->nom) }} {{ ucfirst($etudiant->prenom) }}</h3>
                 <div class="text-center text-gray-400 text-xs font-semibold">
                     <p>@lang('lang.student')(e)</p>
@@ -21,23 +27,23 @@
                     <tbody>
                         <tr>
                             <td class="px-2 py-2 text-gray-500 font-semibold">@lang('lang.birthday')</td>
-                            <td class="px-2 py-2 text-black">{{ ucfirst($etudiant->dateNaissance) }}</td>
+                            <td class="px-2 py-2 text-Violetfoncer">{{ ucfirst($etudiant->dateNaissance) }}</td>
                         </tr>
                         <tr>
                             <td class="px-2 py-2 text-gray-500 font-semibold">@lang('lang.adress')</td>
-                            <td class="px-2 py-2 text-black">{{ ucfirst($etudiant->adresse) }}</td>
+                            <td class="px-2 py-2 text-Violetfoncer">{{ ucfirst($etudiant->adresse) }}</td>
                         </tr>
                         <tr>
                             <td class="px-2 py-2 text-gray-500 font-semibold">@lang('lang.city')</td>
-                            <td class="px-2 py-2 text-black">{{ ucfirst($etudiant->ville) }}</td>
+                            <td class="px-2 py-2 text-Violetfoncer">{{ ucfirst($etudiant->ville) }}</td>
                         </tr>
                         <tr>
                             <td class="px-2 py-2 text-gray-500 font-semibold">@lang('lang.phone')</td>
-                            <td class="px-2 py-2 text-black">{{ ucfirst($etudiant->telephone) }}</td>
+                            <td class="px-2 py-2 text-Violetfoncer">{{ ucfirst($etudiant->telephone) }}</td>
                         </tr>
                         <tr>
                             <td class="px-2 py-2 text-gray-500 font-semibold">@lang('lang.email')</td>
-                            <td class="px-2 py-2 text-black">{{ ucfirst($etudiant->email) }}</td>
+                            <td class="px-2 py-2 text-Violetfoncer">{{ ucfirst($etudiant->email) }}</td>
                         </tr>
 
                     </tbody>
